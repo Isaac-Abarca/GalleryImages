@@ -1,8 +1,24 @@
-# React + Vite
+# Image Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for managing and viewing personal image galleries. Built with React, Firebase, and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Secure login and registration using Firebase Authentication.
+- **Image Upload**: Users can upload images to their personal gallery.
+- **Personal Galleries**: Each user can view only their uploaded images.
+- **Responsive Design**: Clean and responsive UI for a seamless experience across devices.
+- **Firebase Integration**: Real-time database and storage handling with Firebase Firestore and Firebase Storage.
+
+## Technologies
+
+- **React**: Frontend library for building user interfaces.
+- **Vite**: Fast development build tool.
+- **Firebase**: Backend services for authentication, database, and storage.
+
+## Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/image-gallery-app.git
+   cd image-gallery-app
