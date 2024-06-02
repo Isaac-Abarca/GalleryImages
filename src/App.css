@@ -1,0 +1,35 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+/* src/App.css */
+form {
+  margin: 20px 0;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-wrap button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+}
