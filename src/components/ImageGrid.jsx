@@ -1,6 +1,6 @@
-// src/components/ImageGrid.jsx
 import { useImages } from '../hooks/useImages';
 import { useAuth } from '../contexts/AuthContext';
+import '../styles/imageGrid.css'; // Asegúrate de importar el archivo CSS
 
 const ImageGrid = () => {
   const { user } = useAuth();
@@ -11,9 +11,9 @@ const ImageGrid = () => {
   }
 
   return (
-    <div>
+    <div className="image-grid">
       {images.map((image) => (
-        <div key={image.id}>
+        <div key={image.id} className="image-wrap">
           <img src={image.url} alt="uploaded" />
         </div>
       ))}

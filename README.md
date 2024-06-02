@@ -59,6 +59,4 @@ A modern web application for managing and viewing personal image galleries. Buil
 
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
 
-```bash
-   This provides a clear and structured README.md for your project, outlining its features, technologies used, and setup instructions.
-```
+

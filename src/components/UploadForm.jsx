@@ -1,7 +1,7 @@
-// src/components/UploadForm.jsx
 import { useState } from 'react';
 import { uploadImage } from '../hooks/useImages';
 import { useAuth } from '../contexts/AuthContext';
+import '../styles/uploadForm.css'; // Asegúrate de importar el archivo CSS
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
@@ -27,7 +27,7 @@ const UploadForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="upload-form">
       <input type="file" onChange={handleChange} />
       <button type="submit">Upload</button>
     </form>
@@ -35,5 +35,6 @@ const UploadForm = () => {
 };
 
 export default UploadForm;
+
 
 

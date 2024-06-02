@@ -1,11 +1,16 @@
-// src/App.jsx
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
+/* eslint-disable react/prop-types */
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import ImageGrid from './components/ImageGrid';
-import UploadForm from './components/UploadForm';
+import Gallery from './pages/Gallery';
+
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  const { user } = useAuth();
+
+  return user ? <Component {...rest} /> : <Navigate to="/login" />;
+};
 
 const App = () => {
   return (
@@ -15,8 +20,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/gallery" element={<ImageGrid />} />
-          <Route path="/upload" element={<UploadForm />} />
+          <Route path="/gallery" element={<PrivateRoute component={Gallery} />} />
         </Routes>
       </Router>
     </AuthProvider>
@@ -24,5 +28,6 @@ const App = () => {
 };
 
 export default App;
+
 
 
