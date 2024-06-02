@@ -22,3 +22,14 @@ A modern web application for managing and viewing personal image galleries. Buil
    ```bash
    git clone https://github.com/yourusername/image-gallery-app.git
    cd image-gallery-app
+   bash```
+
+2. **Install dependencies:**:
+   ```bash
+   git clone https://github.com/yourusername/image-gallery-app.git
+   cd image-gallery-app
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/image-gallery-app.git
+   cd image-gallery-app
