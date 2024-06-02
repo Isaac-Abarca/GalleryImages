@@ -1,37 +1,20 @@
-import { useState, useEffect } from 'react';
-import { firestore, storage } from '../utils/firebase';
-import { onSnapshot, query, orderBy, collection, deleteDoc, doc } from 'firebase/firestore';
-import { ref, deleteObject } from 'firebase/storage';
+// src/components/ImageGrid.jsx
+import { useImages } from '../hooks/useImages';
+import { useAuth } from '../contexts/AuthContext';
 
 const ImageGrid = () => {
-  const [docs, setDocs] = useState([]);
+  const { user } = useAuth();
+  const images = useImages(user ? user.uid : null); // Pasa null si no hay usuario
 
-  useEffect(() => {
-    const q = query(collection(firestore, 'images'), orderBy('createdAt', 'desc'));
-    const unsub = onSnapshot(q, (snapshot) => {
-      let documents = [];
-      snapshot.forEach(doc => {
-        documents.push({ ...doc.data(), id: doc.id });
-      });
-      setDocs(documents);
-    });
-
-    return () => unsub();
-  }, []);
-
-  const handleDelete = async (id, url) => {
-    const docRef = doc(firestore, 'images', id);
-    await deleteDoc(docRef);
-    const storageRef = ref(storage, url);
-    await deleteObject(storageRef);
-  };
+  if (!user) {
+    return <div>Please log in to view your images.</div>;
+  }
 
   return (
-    <div className="img-grid">
-      {docs && docs.map(doc => (
-        <div className="img-wrap" key={doc.id}>
-          <img src={doc.url} alt="uploaded pic" />
-          <button onClick={() => handleDelete(doc.id, doc.url)}>Delete</button>
+    <div>
+      {images.map((image) => (
+        <div key={image.id}>
+          <img src={image.url} alt="uploaded" />
         </div>
       ))}
     </div>
@@ -39,4 +22,3 @@ const ImageGrid = () => {
 };
 
 export default ImageGrid;
-

@@ -1,10 +1,12 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  background-color: #242424;
+  
 }
-/* src/App.css */
+
 form {
   margin: 20px 0;
 }
@@ -17,6 +19,9 @@ form {
 
 .img-wrap {
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .img-wrap img {
@@ -32,4 +37,11 @@ form {
   background: rgba(255, 255, 255, 0.7);
   border: none;
   cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.img-wrap button:hover {
+  background: rgba(255, 255, 255, 1);
 }
